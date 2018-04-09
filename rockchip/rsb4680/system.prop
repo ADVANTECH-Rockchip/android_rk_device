@@ -46,3 +46,6 @@ ro.kernel.android.checkjni=0
 ro.sf.lcd_density=160
 ro.adb.secure=0
 # persist.display.portrait=true
+factory.long_press_power_off=1
+touch.dual=true
+ro.htg.force=0
