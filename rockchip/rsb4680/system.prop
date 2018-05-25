@@ -48,5 +48,4 @@ ro.adb.secure=0
 # persist.display.portrait=true
 factory.long_press_power_off=1
 #persist.dual.touch=true
-#persist.htg.force=1
 #persist.dual.audio=true

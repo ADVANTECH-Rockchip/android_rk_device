@@ -39,8 +39,9 @@ MALLOC_IMPL := dlmalloc
 
 # Sensors
 BOARD_SENSOR_ST := false
-BOARD_SENSOR_MPU := true
+BOARD_SENSOR_MPU := false 
 BOARD_USES_GENERIC_INVENSENSE := false
+PRODUCT_HAS_CAMERA := false
 
 # ------------ #
 # radical_update

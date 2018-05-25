@@ -21,10 +21,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     displayd
 
-#ril for quectel 3G module
-PRODUCT_PACKAGES += \
-    libquectel-ril
-
 #enable this for support f2fs with data partion
 #BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := f2fs
 # This ensures the needed build tools are available.
@@ -39,6 +35,10 @@ PRODUCT_COPY_FILES += \
     device/rockchip/rsb4680/fstab.rk30board.bootmode.emmc:root/fstab.rk30board.bootmode.emmc \
     device/rockchip/rsb4680/advantech.sh:system/bin/advantech.sh \
     device/rockchip/rsb4680/init.rc:root/init.rc \
+    device/rockchip/rsb4680/libquectel-ril/armeabi-v7a/libreference-ril.so:system/lib/libquectel-ril.so \
+    device/rockchip/rsb4680/libquectel-ril/armeabi-v7a/chat:system/etc/ppp/chat \
+    device/rockchip/rsb4680/libquectel-ril/armeabi-v7a/ip-up:system/etc/ppp/ip-up \
+    device/rockchip/rsb4680/libquectel-ril/armeabi-v7a/ip-down:system/etc/ppp/up-down \
     device/rockchip/rsb4680/config.txt:system/etc/firmware/config.txt
 
 
