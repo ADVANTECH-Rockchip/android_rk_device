@@ -16,4 +16,3 @@
 
 add_lunch_combo rsb4680-user
 add_lunch_combo rsb4680-userdebug
-add_lunch_combo rsb4680-eng

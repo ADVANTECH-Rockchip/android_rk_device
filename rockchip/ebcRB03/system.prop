@@ -47,4 +47,5 @@ ro.sf.lcd_density=160
 ro.adb.secure=0
 # persist.display.portrait=true
 factory.long_press_power_off=1
+#persist.dual.touch=true
 persist.dual.audio=true

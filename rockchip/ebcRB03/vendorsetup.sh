@@ -16,4 +16,3 @@
 
 add_lunch_combo ebcRB03-user
 add_lunch_combo ebcRB03-userdebug
-add_lunch_combo ebcRB03-eng
