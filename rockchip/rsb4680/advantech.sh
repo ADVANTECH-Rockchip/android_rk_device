@@ -33,6 +33,7 @@ adv_hctosys()
 init_dev()
 {
 	chmod 777 -R /data/local/tmp
+	sleep 3
 	ln -s /dev/ttyACM0 /dev/ttyS30
 	ln -s /dev/ttyACM1 /dev/ttyS31
 	ln -s /dev/ttyUSB0 /dev/ttyS6
