@@ -1,0 +1,2 @@
+dhd_slpauto=0
+txglom_mode=0
