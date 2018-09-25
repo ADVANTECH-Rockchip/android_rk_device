@@ -52,8 +52,7 @@
 /dev/rtk_btusb            0660   bluetooth  net_bt_stack
 
 # for DIGI printer
-/dev/ttyACM0              0777   root          root
-/dev/ttyACM1              0777   root          root
+/dev/ttyACM*              0777   root          root
 
 # for radio
 /dev/ttyUSB0              0660   radio		radio
