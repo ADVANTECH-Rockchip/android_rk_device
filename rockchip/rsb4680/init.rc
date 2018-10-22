@@ -490,6 +490,10 @@ on boot
     # Define default initial receive window size in segments.
     setprop net.tcp.default_init_rwnd 60
 
+    #4G
+    setprop ril.neoway.start 0
+    setprop ril.quectel.start 0
+
 on nonencrypted
     class_start main
     class_start late_start
@@ -632,13 +636,13 @@ service debuggerd64 /system/bin/debuggerd64
     class main
     writepid /dev/cpuset/system-background/tasks
 
-service ril-daemon /system/bin/rild
-    class main
-    socket rild stream 660 root radio
-    socket sap_uim_socket1 stream 660 bluetooth bluetooth
-    socket rild-debug stream 660 radio system
-    user root
-    group radio cache inet misc audio log
+#service ril-daemon /system/bin/rild
+#    class main
+#    socket rild stream 660 root radio
+#    socket sap_uim_socket1 stream 660 bluetooth bluetooth
+#    socket rild-debug stream 660 radio system
+#    user root
+#    group radio cache inet misc audio log
 
 service surfaceflinger /system/bin/surfaceflinger
     class core
@@ -762,3 +766,38 @@ service advantech_script /system/bin/advantech.sh
     user root
     group root
     oneshot
+
+service check_mobile /system/bin/check_mobile.sh
+    class late_start
+    user root
+    group root
+    oneshot
+
+on property:ril.neoway.start=1
+    start ril-neoway
+    setprop rild.libpath /system/lib/libneoway-ril.so
+    setprop rild.libargs "-d /dev/ttyUSB2"
+
+service ril-neoway /system/bin/rild
+    class main
+    socket rild stream 660 root radio
+    socket sap_uim_socket1 stream 660 bluetooth bluetooth
+    socket rild-debug stream 660 radio system
+    user root
+    group radio cache inet misc audio log
+    disabled
+
+on property:ril.quectel.start=1
+    start ril-quectel
+    setprop rild.libpath /system/lib/libquectel-ril.so
+    setprop rild.libargs "-d /dev/ttyUSB4"
+
+service ril-quectel /system/bin/rild
+    class main
+    socket rild stream 660 root radio
+    socket sap_uim_socket1 stream 660 bluetooth bluetooth
+    socket rild-debug stream 660 radio system
+    user root
+    group radio cache inet misc audio log
+    disabled
+

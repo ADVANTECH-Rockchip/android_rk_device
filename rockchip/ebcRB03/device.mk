@@ -35,12 +35,16 @@ PRODUCT_COPY_FILES += \
     device/rockchip/ebcRB03/fstab.rk30board.bootmode.emmc:root/fstab.rk30board.bootmode.emmc \
     device/rockchip/ebcRB03/advantech.sh:system/bin/advantech.sh \
     device/rockchip/ebcRB03/init.rc:root/init.rc \
-    device/rockchip/ebcRB03/libquectel-ril/armeabi/chat:system/bin/chat \
-    device/rockchip/ebcRB03/libquectel-ril/armeabi/ip-up:system/etc/ppp/ip-up \
-    device/rockchip/ebcRB03/libquectel-ril/armeabi/ip-down:system/etc/ppp/ip-down \
-    device/rockchip/ebcRB03/libquectel-ril/armeabi/libreference-ril.so:system/lib/libquectel-ril.so \
     device/rockchip/ebcRB03/config.txt:system/etc/firmware/config.txt
 
+#4G modules
+PRODUCT_COPY_FILES += \
+	device/rockchip/ebcRB03/check_mobile.sh:system/bin/check_mobile.sh \
+    vendor/neoway/libreference-ril.so:system/lib/libneoway-ril.so \
+    vendor/quectel/libreference-ril.so:system/lib/libquectel-ril.so \
+    vendor/quectel/chat:system/bin/chat \
+    vendor/quectel/ip-up:system/etc/ppp/ip-up \
+    vendor/quectel/ip-down:system/etc/ppp/ip-down
 
 # setup dalvik vm configs.
 $(call inherit-product, frameworks/native/build/tablet-10in-xhdpi-2048-dalvik-heap.mk)
