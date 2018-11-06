@@ -113,6 +113,12 @@
 /dev/nvmdev 0660	radio	radio
 /dev/fmdev_device	0660	radio	radio
 
+#for usb touch
+/dev/hiddev* 0777 radio radio
+/dev/usb/hiddev* 0777 radio radio
+/dev/hidraw* 0777 radio radio
+/dev/usb/hidraw* 0777 radio radio
+
 # For customer's i2c developement
 /dev/i2c-1           	  0660   system   	 system
 /dev/i2c-2           	  0660   system   	 system

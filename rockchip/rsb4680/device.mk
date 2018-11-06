@@ -46,6 +46,15 @@ PRODUCT_COPY_FILES += \
     vendor/quectel/ip-up:system/etc/ppp/ip-up \
     vendor/quectel/ip-down:system/etc/ppp/ip-down
 
+#usb touch
+PRODUCT_COPY_FILES += \
+    vendor/usbtouch/libcalib-second.so:system/lib/libcalib-second.so \
+    vendor/usbtouch/idc/Vendor_1bfd_Product_1568.idc:system/usr/idc/Vendor_1bfd_Product_1568.idc \
+    vendor/usbtouch/idc/Vendor_1bfd_Product_1688.idc:system/usr/idc/Vendor_1bfd_Product_1688.idc \
+    vendor/usbtouch/idc/Vendor_1bfd_Product_3050.idc:system/usr/idc/Vendor_1bfd_Product_3050.idc \
+    vendor/usbtouch/idc/Vendor_1ddb_Product_0001.idc:system/usr/idc/Vendor_1ddb_Product_0001.idc \
+    vendor/usbtouch/idc/Vendor_22b9_Product_0006.idc:system/usr/idc/Vendor_22b9_Product_0006.idc
+
 # setup dalvik vm configs.
 $(call inherit-product, frameworks/native/build/tablet-10in-xhdpi-2048-dalvik-heap.mk)
 
