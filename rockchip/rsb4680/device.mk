@@ -108,4 +108,5 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # add Advantech properties here
 #
 PRODUCT_PROPERTY_OVERRIDES += \
-                factory.long_press_power_off=1
+                factory.long_press_power_off=1 \
+		persist.dual.audio=true
