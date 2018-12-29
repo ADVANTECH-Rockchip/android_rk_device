@@ -2,7 +2,7 @@ import init.${ro.hardware}.usb.rc
 import init.${ro.hardware}.environment.rc
 
 on init
-    # start watchdogd
+    start watchdogd
     mkdir /metadata 0770 root root
 
     # for adobe reader mobile
