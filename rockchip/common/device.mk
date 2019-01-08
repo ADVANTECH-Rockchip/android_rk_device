@@ -29,6 +29,7 @@ endif
 
 $(call inherit-product, device/rockchip/common/copy.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
+include vendor/widevine/widevine.mk
 PRODUCT_AAPT_CONFIG ?= normal large xlarge hdpi xhdpi xxhdpi
 PRODUCT_AAPT_PREF_CONFIG ?= xhdpi
 
