@@ -14,7 +14,7 @@ on early-init
     restorecon_recursive /sys/kernel/debug/tracing/
 
 on init
-    # start watchdogd
+    start watchdogd
     mkdir /metadata 0770 root root
 
     # for adobe reader mobile
