@@ -23,6 +23,10 @@ PRODUCT_PACKAGES += \
     displayd \
     libion
 
+# added rild
+PRODUCT_PACKAGES += \
+    rild
+
 # Enable this for support f2fs with data partion
 BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := f2fs
 
@@ -42,6 +46,13 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/android.hardware.opengles.aep.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.opengles.aep.xml
 
+# For 4G module
+PRODUCT_COPY_FILES += \
+       vendor/quectel/chat:system/bin/chat \
+       vendor/quectel/ip-down:system/etc/ppp/ip-down \
+       vendor/quectel/ip-up:system/etc/ppp/ip-up \
+       vendor/quectel/libreference-ril.so:vendor/lib/libquectel-ril.so
+
 # update realtek bluetooth configs
 PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/bluetooth/rtkbt.conf:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth/rtkbt.conf
@@ -60,6 +71,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PROPERTY_OVERRIDES += ro.tee.storage=rkss
 endif
 
+# Add build.product default property to parsing related rc
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    ro.build.product=$(strip $(TARGET_PRODUCT))
+
 PRODUCT_COPY_FILES += \
     device/rockchip/rsb4680/public.libraries.txt:vendor/etc/public.libraries.txt
 
@@ -70,8 +85,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
                 ro.ril.ecclist=112,911 \
                 ro.opengles.version=196610 \
                 wifi.interface=wlan0 \
-                rild.libpath=/system/lib/libril-rk29-dataonly.so \
-                rild.libargs=-d /dev/ttyACM0 \
                 persist.tegra.nvmmlite = 1 \
                 ro.audio.monitorOrientation=true \
                 debug.nfc.fw_download=false \
@@ -102,11 +115,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
                 ro.build.shutdown_timeout=0 \
                 persist.enable_task_snapshots=false \
                 ro.adb.secure=0 \
-                ro.rk.displayd.enable=false
+                ro.rk.displayd.enable=false \
 
 #
 # add Advantech properties here
 #
 PRODUCT_PROPERTY_OVERRIDES += \
                 factory.long_press_power_off=1 \
-		persist.dual.audio=true
+		persist.dual.audio=true \
+		ro.boot.noril = false \
+                ro.radio.noril = false
