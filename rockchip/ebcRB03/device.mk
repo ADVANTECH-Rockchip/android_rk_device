@@ -39,7 +39,7 @@ PRODUCT_COPY_FILES += \
 
 #4G modules
 PRODUCT_COPY_FILES += \
-	device/rockchip/ebcRB03/check_mobile.sh:system/bin/check_mobile.sh \
+    device/rockchip/ebcRB03/check_mobile.sh:system/bin/check_mobile.sh \
     vendor/neoway/libreference-ril.so:system/lib/libneoway-ril.so \
     vendor/quectel/libreference-ril.so:system/lib/libquectel-ril.so \
     vendor/quectel/chat:system/bin/chat \
@@ -60,3 +60,5 @@ $(call inherit-product, frameworks/native/build/tablet-10in-xhdpi-2048-dalvik-he
 
 
 $(call inherit-product-if-exists, vendor/rockchip/ebcRB03/device-vendor.mk)
+
+$(call inherit-product, vendor/widevine/widevine.mk)
