@@ -21,6 +21,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     displayd
 
+#added AdvBroadcastReceiver
+PRODUCT_PACKAGES += \
+    AdvBroadcastReceiver
+
 #enable this for support f2fs with data partion
 #BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := f2fs
 # This ensures the needed build tools are available.
