@@ -4,6 +4,7 @@ import init.connectivity.rc
 import init.box.samba.rc
 import init.${ro.board.platform}.rc
 import init.${ro.target.product}.rc
+import init.${ro.build.product}.rc
 import init.car.rc
 import init.optee.rc
 
