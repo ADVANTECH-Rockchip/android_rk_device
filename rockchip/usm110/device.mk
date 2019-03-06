@@ -53,6 +53,10 @@ PRODUCT_COPY_FILES += \
        vendor/quectel/ip-up:system/etc/ppp/ip-up \
        vendor/quectel/libreference-ril.so:vendor/lib/libquectel-ril.so
 
+# For auto run Shell
+PRODUCT_COPY_FILES += \
+       $(LOCAL_PATH)/adv_autorun.sh:system/bin/adv_autorun.sh
+
 # update realtek bluetooth configs
 PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/bluetooth/rtkbt.conf:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth/rtkbt.conf

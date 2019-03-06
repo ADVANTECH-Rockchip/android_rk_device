@@ -1,0 +1,12 @@
+type adv_autorun, domain, coredomain, mlstrustedsubject;
+type adv_autorun_exec, exec_type, vendor_file_type, file_type;
+
+#permissive adv_autorun;
+init_daemon_domain(adv_autorun)
+
+#file_type_auto_trans(adv_autorun, system_data_file, system_data_file)
+
+allow adv_autorun shell_exec:file { getattr read };
+allow adv_autorun aplog_data_file:file { open create read write getattr append rename unlink };
+allow adv_autorun aplog_data_file:dir { read open getattr create write add_name remove_name search rmdir };
+allow adv_autorun toolbox_exec:file { execute execute_no_trans getattr open read };
