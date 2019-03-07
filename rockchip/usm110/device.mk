@@ -129,4 +129,5 @@ PRODUCT_PROPERTY_OVERRIDES += \
 		persist.dual.audio=true \
 		ro.boot.noril=false \
                 ro.radio.noril=false \
-                ro.rk.hdmisetting=true
+                ro.rk.hdmisetting=true \
+		persist.sys.timezone=America/Los_Angeles
