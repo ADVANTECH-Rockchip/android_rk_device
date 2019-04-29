@@ -99,3 +99,5 @@ BOARD_SUPPORT_VP6 := false
 
 # enable SVELTE malloc
 MALLOC_SVELTE := true
+
+BOARD_USB_ALLOW_DEFAULT_MTP := true
