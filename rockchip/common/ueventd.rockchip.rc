@@ -66,6 +66,9 @@
 /dev/ttyUSB8              0660   radio		radio
 /dev/ttyUSB9              0660   radio		radio
 
+# for android-link
+/dev/graphics/fb0         0666    system           graphics
+
 # for mali-t764
 /dev/mali0           	  0666   system   	 system
 
