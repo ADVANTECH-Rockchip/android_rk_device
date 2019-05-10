@@ -52,3 +52,4 @@ ro.adb.secure=0
 factory.long_press_power_off=1
 #persist.dual.touch=true
 persist.dual.audio=true
+persist.inputmethod.dual=true
