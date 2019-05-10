@@ -33,6 +33,7 @@ adv_hctosys()
 init_dev()
 {
 	chmod 777 /dev/tty*
+	chmod 666 /cache/recovery/*
 }
 
 init_dev

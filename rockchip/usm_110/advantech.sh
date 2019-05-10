@@ -33,6 +33,7 @@ adv_hctosys()
 init_dev()
 {
 	chmod 777 /dev/tty*
+	chmod 666 /cache/recovery/*
 	echo "SignageCMS.Block.Suspend" > /sys/power/wake_lock
 }
 
