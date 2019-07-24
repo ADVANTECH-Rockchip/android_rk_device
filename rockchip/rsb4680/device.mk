@@ -27,6 +27,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     rild
 
+#added AdvBroadcastReceiver
+PRODUCT_PACKAGES += \
+    AdvBroadcastReceiver
+
 # Enable this for support f2fs with data partion
 BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := f2fs
 
@@ -52,6 +56,10 @@ PRODUCT_COPY_FILES += \
        vendor/quectel/ip-down:system/etc/ppp/ip-down \
        vendor/quectel/ip-up:system/etc/ppp/ip-up \
        vendor/quectel/libreference-ril.so:vendor/lib/libquectel-ril.so
+
+# For auto run Shell
+PRODUCT_COPY_FILES += \
+       $(LOCAL_PATH)/adv_autorun.sh:system/bin/adv_autorun.sh
 
 # update realtek bluetooth configs
 PRODUCT_COPY_FILES += \
@@ -99,7 +107,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
                 sf.power.control=2073600 \
                 sys.rkadb.root=0 \
                 ro.sf.fakerotation=false \
-                ro.sf.hwrotation=0 \
+		ro.same.orientation=true \
+		ro.rotation.external=true \
                 ro.rk.MassStorage=false \
                 ro.rk.systembar.voiceicon=true \
                 ro.rk.systembar.tabletUI=false \
@@ -121,9 +130,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # add Advantech properties here
 #
 PRODUCT_PROPERTY_OVERRIDES += \
-                factory.long_press_power_off=1 \
+		factory.long_press_power_off=1 \
 		persist.dual.audio=true \
 		ro.boot.noril=false \
-                ro.radio.noril=false \
+		ro.radio.noril=false \
+		persist.navbar=true \
+		persist.statusbar=true \
 		persist.sys.usb.config=mtp,adb \
-                ro.rk.hdmisetting=true
+		ro.rk.hdmisetting=true
+

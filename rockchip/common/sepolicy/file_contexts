@@ -125,5 +125,8 @@
 #for cec
 /dev/cec[0-9]*              u:object_r:cec_device:s0
 
+#for hid audio
+/dev/hidraw0                u:object_r:hidraw_device:s0
+
 #adv_autorun
 /system/bin/adv_autorun.sh u:object_r:adv_autorun_exec:s0
