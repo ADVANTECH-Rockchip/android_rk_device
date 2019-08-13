@@ -18,11 +18,6 @@ bootCount()
 init_dev()
 {
 	chmod 777 /dev/tty*
-	ln -s /dev/ttyS1 /dev/ttyuart5
-	ln -s /dev/ttyS3 /dev/ttyuart6
-	ln -s /dev/ttyS4 /dev/ttyuart2
-	ln -s /dev/ttyUSB0 /dev/ttyuart3
-	ln -s /dev/ttyUSB1 /dev/ttyuart4
 }
 
 enable_tcp_adb()
@@ -34,5 +29,5 @@ enable_tcp_adb()
 
 init_dev
 #bootCount
-#enable_tcp_adb
+enable_tcp_adb
 
