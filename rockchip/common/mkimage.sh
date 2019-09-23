@@ -90,6 +90,12 @@ fi
 	cp -a rkst/Image/pcba_whole_misc.img $IMAGE_PATH/pcba_whole_misc.img
 	echo "done."
 
+	echo -n "copy uboot and kernel.... "
+	cp -a kernel/resource.img $IMAGE_PATH/resource.img
+	cp -a kernel/kernel.img $IMAGE_PATH/kernel.img
+	cp -a u-boot/RK3288UbootLoader_V*.bin $IMAGE_PATH/
+	echo "done."
+
 if [ -d $OUT/system ]
 then
 	echo -n "create system.img... "
