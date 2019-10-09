@@ -57,7 +57,10 @@ PRODUCT_COPY_FILES += \
     vendor/usbtouch/idc/Vendor_1bfd_Product_1688.idc:system/usr/idc/Vendor_1bfd_Product_1688.idc \
     vendor/usbtouch/idc/Vendor_1bfd_Product_3050.idc:system/usr/idc/Vendor_1bfd_Product_3050.idc \
     vendor/usbtouch/idc/Vendor_1ddb_Product_0001.idc:system/usr/idc/Vendor_1ddb_Product_0001.idc \
-    vendor/usbtouch/idc/Vendor_22b9_Product_0006.idc:system/usr/idc/Vendor_22b9_Product_0006.idc
+    vendor/usbtouch/idc/Vendor_22b9_Product_0006.idc:system/usr/idc/Vendor_22b9_Product_0006.idc \
+    vendor/usbtouch/idc/eGalaxTouch_VirtualDevice.idc:system/usr/idc/eGalaxTouch_VirtualDevice.idc \
+    vendor/usbtouch/eGTouchD:system/bin/eGTouchD \
+    vendor/usbtouch/eGTouchA.ini:data/eGTouchA.ini
 
 # setup dalvik vm configs.
 $(call inherit-product, frameworks/native/build/tablet-10in-xhdpi-2048-dalvik-heap.mk)

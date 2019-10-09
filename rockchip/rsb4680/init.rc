@@ -801,3 +801,8 @@ service ril-quectel /system/bin/rild
     group radio cache inet misc audio log
     disabled
 
+service eGTouchD /system/bin/eGTouchD
+    class main
+    user root
+    group root
+    oneshot
