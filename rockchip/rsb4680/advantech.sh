@@ -32,16 +32,23 @@ adv_hctosys()
 
 init_dev()
 {
-	chmod 777 -R /data/local/tmp
 	chmod 666 /cache/recovery/*
-	sleep 3
-	ln -s /dev/ttyACM0 /dev/ttyS30
-	ln -s /dev/ttyACM1 /dev/ttyS31
-	ln -s /dev/ttyUSB0 /dev/ttyS6
-	ln -s /dev/ttyUSB1 /dev/ttyS7
 	chmod 777 /dev/tty*
+	ln -s /dev/ttyS1 /dev/ttyuart5
+	ln -s /dev/ttyS3 /dev/ttyuart6
+	ln -s /dev/ttyS4 /dev/ttyuart2
+	ln -s /dev/ttyUSB0 /dev/ttyuart3
+	ln -s /dev/ttyUSB1 /dev/ttyuart4
+}
+
+enable_tcp_adb()
+{
+	setprop service.adb.tcp.port 5555
+	stop adbd
+	start adbd
 }
 
 init_dev
 bootCount
 #adv_hctosys
+#enable_tcp_adb
