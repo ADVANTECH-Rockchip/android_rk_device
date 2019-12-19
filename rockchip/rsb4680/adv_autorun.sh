@@ -29,5 +29,5 @@ enable_tcp_adb()
 
 init_dev
 #bootCount
-enable_tcp_adb
+#enable_tcp_adb
 
