@@ -20,7 +20,7 @@ endif
 # bluetooth support
 ifeq ($(strip $(BOARD_CONNECTIVITY_VENDOR)), Broadcom)
 BOARD_HAVE_BLUETOOTH := true
-BOARD_HAVE_BLUETOOTH_BCM := true
+#BOARD_HAVE_BLUETOOTH_BCM := true
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/rockchip/$(TARGET_BOARD_PLATFORM)/bluetooth
 
 ifeq ($(strip $(PRODUCT_BUILD_MODULE)), px5car)
@@ -40,3 +40,5 @@ endif
 BOARD_HAVE_BLUETOOTH_RTK := true
 BOARD_HAVE_BLUETOOTH_RTK_COEX := true
 
+#BT
+BOARD_HAVE_BLUETOOTH_MRVL := true

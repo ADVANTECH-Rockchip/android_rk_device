@@ -59,7 +59,9 @@ PRODUCT_COPY_FILES += \
 
 # For auto run Shell
 PRODUCT_COPY_FILES += \
-       $(LOCAL_PATH)/adv_autorun.sh:system/bin/adv_autorun.sh
+       $(LOCAL_PATH)/adv_autorun.sh:system/bin/adv_autorun.sh \
+       $(LOCAL_PATH)/hdmi-on.sh:system/bin/hdmi-on.sh \
+       $(LOCAL_PATH)/hdmi-off.sh:system/bin/hdmi-off.sh
 
 # update realtek bluetooth configs
 PRODUCT_COPY_FILES += \

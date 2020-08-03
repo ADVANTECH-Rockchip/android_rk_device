@@ -125,6 +125,7 @@ on boot
 
     # hdmi status
     chown system system /sys/devices/platform/display-subsystem/drm/card0/card0-HDMI-A-1/status
+    chmod 0666 /sys/devices/platform/display-subsystem/drm/card0/card0-HDMI-A-1/status
     chown system system /d/dw-hdmi/status
     chmod 0660 /d/dw-hdmi/status
 

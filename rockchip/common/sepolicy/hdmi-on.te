@@ -1,0 +1,12 @@
+type hdmi-on, domain, coredomain, mlstrustedsubject;
+type hdmi-on_exec, exec_type, vendor_file_type, file_type;
+
+#permissive hdmi-on;
+init_daemon_domain(hdmi-on)
+
+#file_type_auto_trans(hdmi-on, system_data_file, system_data_file)
+
+allow hdmi-on shell_exec:file { getattr read };
+allow hdmi-on aplog_data_file:file { open create read write getattr append rename unlink };
+allow hdmi-on aplog_data_file:dir { read open getattr create write add_name remove_name search rmdir };
+allow hdmi-on toolbox_exec:file { execute execute_no_trans getattr open read };

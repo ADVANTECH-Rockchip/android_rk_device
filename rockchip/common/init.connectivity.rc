@@ -63,6 +63,12 @@ on boot
     chown nfc nfc /data/nfc
     chown nfc nfc /data/nfc/param
 
+#Marvell BT driver
+    insmod /system/lib/modules/mbt8xxx.ko
+    chmod 0666 /dev/mbtchar0
+    chmod 0666 /dev/mdebugchar0
+    chown bluetooth net_bt /dev/mbtchar0
+
 service wpa_supplicant /vendor/bin/hw/wpa_supplicant \
     /vendor/etc/wifi/wpa_config.txt
     class main
