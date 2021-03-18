@@ -50,5 +50,6 @@ enable_tcp_adb()
 
 init_dev
 bootCount
+network_port_block &
 #adv_hctosys
 #enable_tcp_adb

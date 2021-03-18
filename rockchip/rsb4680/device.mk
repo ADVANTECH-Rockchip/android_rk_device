@@ -38,6 +38,7 @@ PRODUCT_COPY_FILES += \
     device/rockchip/rsb4680/fstab.rk30board.bootmode.unknown:root/fstab.rk30board.bootmode.unknown \
     device/rockchip/rsb4680/fstab.rk30board.bootmode.emmc:root/fstab.rk30board.bootmode.emmc \
     device/rockchip/rsb4680/advantech.sh:system/bin/advantech.sh \
+    device/rockchip/rsb4680/network_port_block:system/bin/network_port_block \
     device/rockchip/rsb4680/init.rc:root/init.rc \
     device/rockchip/rsb4680/config.txt:system/etc/firmware/config.txt
 
