@@ -33,6 +33,13 @@ PRODUCT_PACKAGES += \
 # Get the long list of APNs
 PRODUCT_COPY_FILES += vendor/rockchip/common/phone/etc/apns-full-conf.xml:system/etc/apns-conf.xml
 PRODUCT_COPY_FILES += vendor/rockchip/common/phone/etc/spn-conf.xml:system/etc/spn-conf.xml
+
+PRODUCT_COPY_FILES += \
+    vendor/advantech/tools/fw_printenv:/system/bin/fw_defenv \
+    vendor/advantech/tools/fw_printenv:/system/bin/fw_printenv \
+    vendor/advantech/tools/fw_printenv:/system/bin/fw_setenv \
+    vendor/advantech/tools/fw_env.config:/system/etc/fw_env.config
+
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.product.version = 1.0.0 \
     ro.product.ota.host = www.rockchip.com:2300
