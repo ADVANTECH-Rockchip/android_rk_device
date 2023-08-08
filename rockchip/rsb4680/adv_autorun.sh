@@ -27,7 +27,16 @@ enable_tcp_adb()
 	start adbd
 }
 
+enable_openssh()
+{
+    mount -o rw,remount /
+    mkdir -p /var/run/ssh/empty
+    chmod 700 /var/run/ssh/empty
+    /system/bin/start-ssh &
+}
+
 init_dev
 #bootCount
-#enable_tcp_adb
+enable_tcp_adb
+enable_openssh
 

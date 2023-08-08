@@ -130,3 +130,4 @@
 
 #adv_autorun
 /system/bin/adv_autorun.sh u:object_r:adv_autorun_exec:s0
+/var  u:object_r:tmpfs:s0

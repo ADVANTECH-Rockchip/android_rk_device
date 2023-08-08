@@ -26,7 +26,6 @@ on property:sys.boot_completed=1
     write /dev/video_state n
 
 on boot
-
     # update foreground cpuset now that processors are up
     # reserve CPU 3 for the top app
     write /dev/cpuset/foreground/cpus 0-3
@@ -34,6 +33,8 @@ on boot
     write /dev/cpuset/background/cpus 0-2
     write /dev/cpuset/system-background/cpus 0-2
     write /dev/cpuset/top-app/cpus 0-3
+
+    write /sys/power/wake_lock Advantech_Lock_ForSuspend
 
     chown system system /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
     chmod 0660 /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
@@ -46,7 +47,13 @@ on boot
     chown system system  /sys/devices/system/cpu/cpufreq/interactive/boostpulse
     chmod 0660 /sys/devices/system/cpu/cpufreq/interactive/boostpulse
     chmod 0666 /sys/class/devfreq/dmc/system_status
-  
+
+on post-fs-data
+    mkdir /data/ssh
+    mount -o rw,remount /
+    mkdir -p /var/run/ssh/empty
+    chmod 700 /var/run/ssh/empty
+
 service adv_autorun /system/bin/adv_autorun.sh
     class main
     user root

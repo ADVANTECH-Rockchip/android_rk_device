@@ -53,6 +53,7 @@ BOARD_USES_GENERIC_INVENSENSE := false
 # Use HWC2
 TARGET_USES_HWC2 := true
 
+BOARD_ROOT_EXTRA_FOLDERS += var
 
 # Enable dex-preoptimization to speed up first boot sequence
 ifeq ($(HOST_OS), linux)
